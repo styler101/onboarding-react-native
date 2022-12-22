@@ -1,24 +1,21 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
-import image1 from '../../assets/img/onboarding-2.png'
+
 import style from '../../assets/styles/global'
 
 const { width, height } = Dimensions.get('screen')
 console.log(width)
-export function BoardItem() {
+export function BoardItem(props) {
+  const { item } = props
   return (
     <View style={styles.container}>
       <View style={styles.imgWrapper}>
-        <Image source={image1} style={styles.image} />
+        <Image source={item.image} style={styles.image} />
       </View>
-
       <View style={styles.messageContainer}>
-        <Text style={styles.title}> Let's Traveling </Text>
+        <Text style={styles.title}> {item.title} </Text>
         <Text style={styles.description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quo
-          assumenda dolor illum ratione, facere qui non deleniti adipisci cum
-          illo placeat quis corrupti magni perspiciatis. Quia omnis saepe
-          voluptatem?
+          {item.description}
         </Text>
       </View>
     </View>
