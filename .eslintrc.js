@@ -4,5 +4,7 @@ module.exports = {
   rules: {
     semi: 'off',
     'prettier/prettier': 'off',
+    'eact-native/no-inline-styles': 'off',
+    'quotes': 'off',
   },
 }

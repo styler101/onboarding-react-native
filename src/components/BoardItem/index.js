@@ -1,10 +1,9 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
-
+import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import style from '../../assets/styles/global'
 
 const { width, height } = Dimensions.get('screen')
-console.log(width)
+
 export function BoardItem(props) {
   const { item } = props
   return (
@@ -18,6 +17,7 @@ export function BoardItem(props) {
           {item.description}
         </Text>
       </View>
+
     </View>
   )
 }
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 
+
   messageContainer: {
     position: 'absolute',
     bottom: 50,
@@ -63,5 +64,25 @@ const styles = StyleSheet.create({
     color: style.colors.gray,
     textAlign: 'center',
     marginTop: style.spacing.xs,
+    fontFamily: style.fonts.regular,
+  },
+
+  btn:{
+    position:'absolute',
+    right:0,
+    bottom:0,
+    backgroundColor: style.colors.blue,
+    width:100,
+    height:40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+  },
+
+  btnText:{
+    color: style.colors.white,
+    size: style.size.lg,
+    fontFamily: style.fonts.bold,
   },
 })
